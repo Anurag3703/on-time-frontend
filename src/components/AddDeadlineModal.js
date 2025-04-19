@@ -66,13 +66,20 @@ const AddDeadlineModal = ({ userEmail, onClose, onDeadlineAdded, selectedDate = 
     
     try {
       await addDeadline({
-        ...formData,
-        userEmail
+        universityName: formData.universityName,
+        startDate: formData.startDate,
+        endDate: formData.endDate,
+        notes: formData.notes,
+        user: {
+          email: userEmail
+        }
       });
       
       if (onDeadlineAdded) {
         onDeadlineAdded();
       }
+      
+      onClose(); // Close modal after successful submission
     } catch (error) {
       console.error('Failed to add deadline:', error);
       setErrors({
@@ -82,7 +89,6 @@ const AddDeadlineModal = ({ userEmail, onClose, onDeadlineAdded, selectedDate = 
       setIsSubmitting(false);
     }
   };
-
   return (
     <div className="modal-overlay">
       <div className="modal">
