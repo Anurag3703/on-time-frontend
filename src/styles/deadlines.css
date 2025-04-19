@@ -1,0 +1,285 @@
+/* styles/deadlines.css - Updated to include Add Deadline button */
+.deadlines-container {
+  padding: 1rem 0;
+}
+
+.deadlines-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.deadlines-header h1 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-dark);
+}
+
+.deadlines-header p {
+  color: var(--text-light);
+  font-size: 1.125rem;
+}
+
+/* Add Deadline Button on Deadlines Page */
+.deadlines-actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.add-deadline-btn-large {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-deadline-btn-large i {
+  margin-right: 0.5rem;
+}
+
+.add-deadline-btn-large:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.add-deadline-btn-large:active {
+  transform: translateY(0);
+}
+
+.deadlines-list-container {
+  margin-top: 2rem;
+}
+
+.deadlines-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.sort-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sort-select {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+.sort-order-btn {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deadlines-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.deadline-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border-top: 4px solid var(--primary-color);
+}
+
+.deadline-card:hover {
+  box-shadow: var(--box-shadow-hover);
+  transform: translateY(-4px);
+}
+
+.deadline-card.status-expired {
+  border-top-color: var(--text-lighter);
+}
+
+.deadline-card.status-upcoming {
+  border-top-color: var(--info-color);
+}
+
+.deadline-card.status-progress {
+  border-top-color: var(--primary-color);
+}
+
+.deadline-card.status-soon {
+  border-top-color: var(--warning-color);
+}
+
+.deadline-card.status-urgent {
+  border-top-color: var(--danger-color);
+}
+
+.deadline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.deadline-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  flex: 1;
+  padding-right: 1rem;
+}
+
+.deadline-status {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.deadline-status.status-expired {
+  background-color: var(--text-lighter);
+  color: var(--white);
+}
+
+.deadline-status.status-upcoming {
+  background-color: var(--info-color);
+  color: var(--white);
+}
+
+.deadline-status.status-progress {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.deadline-status.status-soon {
+  background-color: var(--warning-color);
+  color: var(--white);
+}
+
+.deadline-status.status-urgent {
+  background-color: var(--danger-color);
+  color: var(--white);
+}
+
+.deadline-dates {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.date-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-label {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.date-value {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.deadline-countdown {
+  background-color: var(--background-dark);
+  border-radius: var(--border-radius);
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.deadline-countdown i {
+  color: var(--primary-color);
+}
+
+.deadline-notes {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.deadline-notes h4 {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.deadline-notes p {
+  font-size: 0.875rem;
+  color: var(--text-dark);
+  margin: 0;
+  word-break: break-word;
+}
+
+.sign-in-prompt {
+  text-align: center;
+  max-width: 400px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.sign-in-prompt p {
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+}
+
+.no-deadlines {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--text-light);
+  font-size: 1.125rem;
+}
+
+/* Special styling to hide userStyle tags */
+userStyle, 
+[data-json],
+script:not([src]) {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+@media (max-width: 768px) {
+  .deadlines-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .deadlines-grid {
+    grid-template-columns: 1fr;
+  }
+}

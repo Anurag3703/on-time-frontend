@@ -1,0 +1,87 @@
+/* styles/footer.css - Updated to match color scheme */
+.footer {
+    background-color: #6366f1; /* Primary color to match calendar header */
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+    position: relative;
+    margin-top: 2rem;
+  }
+  
+  .social-section {
+    margin-bottom: 1rem;
+  }
+  
+  .follow-text {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    transform: translateY(-3px);
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .social-icon i {
+    font-size: 1.25rem;
+  }
+  
+  .footer-bottom {
+    padding: 1rem 0 0;
+    font-size: 0.875rem;
+    opacity: 0.9;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+  }
+  
+  /* Special styling to hide userStyle tag */
+  .style-remover userStyle,
+  userStyle,
+  [class^="short_name"],
+  [class*="short_name"] {
+    display: none !important;
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    overflow: hidden !important;
+  }
+  
+  @media (max-width: 480px) {
+    .social-icon {
+      width: 36px;
+      height: 36px;
+    }
+    
+    .social-icon i {
+      font-size: 1rem;
+    }
+    
+    .follow-text {
+      font-size: 1rem;
+    }
+  }
