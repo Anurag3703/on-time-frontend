@@ -1,9 +1,8 @@
-// components/DeadlinesList.js
 import React, { useState } from 'react';
 import '../styles/deadlines.css';
 import DeadlineItem from './DeadlineItem';
 
-const DeadlinesList = ({ deadlines }) => {
+const DeadlinesList = ({ deadlines, setDeadlines }) => {
   const [sortBy, setSortBy] = useState('endDate');
   const [sortOrder, setSortOrder] = useState('asc');
 
@@ -13,6 +12,12 @@ const DeadlinesList = ({ deadlines }) => {
 
   const toggleSortOrder = () => {
     setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+  };
+
+  // Handle successful deadline deletion
+  const handleDeleteSuccess = (deletedId) => {
+    // Update the deadlines list by filtering out the deleted deadline
+    setDeadlines(deadlines.filter(deadline => deadline.id !== deletedId));
   };
 
   // Sort deadlines
@@ -63,7 +68,11 @@ const DeadlinesList = ({ deadlines }) => {
 
       <div className="deadlines-grid">
         {sortedDeadlines.map((deadline) => (
-          <DeadlineItem key={deadline.id} deadline={deadline} />
+          <DeadlineItem 
+            key={deadline.id} 
+            deadline={deadline}
+            onDeleteSuccess={handleDeleteSuccess}
+          />
         ))}
       </div>
     </div>

@@ -44,4 +44,26 @@ export const addDeadline = async (deadline) => {
     console.error('Error adding deadline:', error);
     throw error;
   }
+
+  
 };
+
+export const deleteDeadline = async (email, id) => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/deadlines/delete?email=${email}&id=${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to delete deadline');
+      }
+      
+      return await response.text();
+    } catch (error) {
+      console.error('Error deleting deadline:', error);
+      throw error;
+    }
+  };
