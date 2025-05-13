@@ -1,5 +1,5 @@
 // services/api.js - API Service
-const API_BASE_URL = 'https://deadlinescheduler-2.onrender.com/';
+const API_BASE_URL = 'https://deadlinescheduler-2.onrender.com';
 
 export const addUser = async (email) => {
   try {
