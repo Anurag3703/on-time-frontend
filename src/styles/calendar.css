@@ -152,4 +152,55 @@
   .calendar-header h2 {
     font-size: 1.125rem;
   }
+  /* Add these styles to your styles/calendar.css and styles/deadlines.css */
+
+/* .voice-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color, #6366F1);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius, 4px);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-left: 10px;
+  height: 100%; /* Match parent container height */
 }
+
+.voice-button:hover {
+  background-color: var(--primary-dark, #4F46E5);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.voice-button:active {
+  transform: translateY(0);
+}
+
+.voice-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+} */
+
+.transcript-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Make the button the same size as "Add Deadline" */
+.deadlines-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* This ensures vertical alignment */
+  margin-bottom: 2rem;
+  gap: 10px; /* Controls spacing between buttons */
+}
+

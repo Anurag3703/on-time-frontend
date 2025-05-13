@@ -1,8 +1,9 @@
-// pages/Home.js - Main Calendar View
+// pages/Home.js - Main Calendar View with centered VoiceInput
 import React, { useEffect, useState } from 'react';
 import AddDeadlineModal from '../components/AddDeadlineModal';
 import Calendar from '../components/Calendar';
 import EmailModal from '../components/EmailModal';
+import VoiceInput from '../components/VoiceInput';
 import { getAllDeadlines } from '../services/api';
 import '../styles/calendar.css';
 
@@ -50,6 +51,11 @@ const Home = ({ userEmail, setUserEmail }) => {
       <div className="calendar-header">
         <h1>Manage Your Deadlines</h1>
         <p>Stay on top of your important dates and deadlines</p>
+        
+        {/* Centered VoiceInput - UPDATED: Passing userEmail */}
+        <div style={{ textAlign: 'center', marginTop: '15px' }}>
+          <VoiceInput userEmail={userEmail} />
+        </div>
       </div>
       
       {isLoading ? (

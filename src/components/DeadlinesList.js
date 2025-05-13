@@ -17,7 +17,7 @@ const DeadlinesList = ({ deadlines, setDeadlines }) => {
   // Handle successful deadline deletion
   const handleDeleteSuccess = (deletedId) => {
     // Update the deadlines list by filtering out the deleted deadline
-    setDeadlines(deadlines.filter(deadline => deadline.id !== deletedId));
+    setDeadlines(prevDeadlines => prevDeadlines.filter(deadline => deadline.id !== deletedId));
   };
 
   // Sort deadlines

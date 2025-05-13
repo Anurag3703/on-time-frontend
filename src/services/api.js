@@ -1,5 +1,5 @@
 // services/api.js - API Service
-const API_BASE_URL = 'https://deadlinescheduler-2.onrender.com/api';
+const API_BASE_URL = 'http://localhost:8081/api';
 
 export const addUser = async (email) => {
   try {
@@ -40,33 +40,52 @@ export const addDeadline = async (deadline) => {
       body: JSON.stringify(deadline),
     });
     if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Failed to add deadline');
-      }
-      
-      return await response.json();
-    } catch (error) {
-      console.error('Error adding deadline:', error);
-      throw error;
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Failed to add deadline');
     }
-  };
+    
+    return await response.json();
+  } catch (error) {
+    console.error('Error adding deadline:', error);
+    throw error;
+  }
+};
 
 export const deleteDeadline = async (email, id) => {
-    try {
-      const response = await fetch(`${API_BASE_URL}/deadlines/delete?email=${email}&id=${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      });
-      
-      if (!response.ok) {
-        throw new Error('Failed to delete deadline');
+  try {
+    const response = await fetch(`${API_BASE_URL}/deadlines/delete?email=${email}&id=${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
       }
-      
-      return await response.text();
-    } catch (error) {
-      console.error('Error deleting deadline:', error);
-      throw error;
+    });
+    
+    if (!response.ok) {
+      throw new Error('Failed to delete deadline');
     }
-  };
+    
+    return await response.text();
+  } catch (error) {
+    console.error('Error deleting deadline:', error);
+    throw error;
+  }
+};
+
+export const parseVoiceCommand = async (command) => {
+  try {
+    const response = await fetch('http://localhost:8081/api/voice-parse', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ command }),
+    });
+    if (!response.ok) {
+      throw new Error('Failed to parse voice command');
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error parsing voice command:', error);
+    throw error;
+  }
+};

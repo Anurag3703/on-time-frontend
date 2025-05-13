@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import AddDeadlineModal from '../components/AddDeadlineModal';
 import DeadlinesList from '../components/DeadlinesList';
 import EmailModal from '../components/EmailModal';
+import VoiceInput from '../components/VoiceInput';
 import { getAllDeadlines } from '../services/api';
 import '../styles/deadlines.css';
 
@@ -67,6 +68,9 @@ const AllDeadlines = ({ userEmail, setUserEmail }) => {
         >
           <i className="fas fa-plus"></i> Add New Deadline
         </button>
+        
+        {/* Voice Input with proper spacing - UPDATED: Passing userEmail */}
+        <VoiceInput userEmail={userEmail} />
       </div>
 
       {!userEmail && (
@@ -88,7 +92,7 @@ const AllDeadlines = ({ userEmail, setUserEmail }) => {
           <p>Click the "Add New Deadline" button to get started!</p>
         </div>
       ) : (
-        <DeadlinesList deadlines={deadlines} />
+        <DeadlinesList deadlines={deadlines} setDeadlines={setDeadlines} />
       )}
 
       {showEmailModal && (
