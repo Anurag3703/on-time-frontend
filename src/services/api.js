@@ -1,5 +1,5 @@
 // services/api.js - API Service
-const API_BASE_URL = 'https://deadlinescheduler-2.onrender.com';
+const API_BASE_URL = 'https://deadlinescheduler-2.onrender.com/api';
 
 export const addUser = async (email) => {
   try {
@@ -73,7 +73,7 @@ export const deleteDeadline = async (email, id) => {
 
 export const parseVoiceCommand = async (command) => {
   try {
-    const response = await fetch('https://deadlinescheduler-2.onrender.com//api/voice-parse', {
+    const response = await fetch('https://deadlinescheduler-2.onrender.com/api/voice-parse', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
